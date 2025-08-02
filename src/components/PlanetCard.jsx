@@ -1,14 +1,23 @@
+// PlanetCard.jsx
 import React from 'react';
 
 const PlanetCard = ({ planet }) => {
   return (
     <div className="bg-gray-900 bg-opacity-70 rounded-xl overflow-hidden border border-indigo-900 planet-card transition duration-300">
       <div className={`h-48 bg-gradient-to-b ${planet.gradient} flex items-center justify-center`}>
-        <div className={`w-24 h-24 rounded-full bg-${planet.color} ${planet.name === "The Sun" ? 'shadow-lg shadow-yellow-500/50' : ''} relative`}>
-          {planet.name === "Saturn" && (
-            <div className="absolute inset-0 rounded-full border-4 border-yellow-500 opacity-70"></div>
-          )}
-        </div>
+        {planet.image ? (
+          <img
+            src={planet.image}
+            alt={planet.name}
+            className="w-24 h-24 object-contain rounded-full shadow-md"
+          />
+        ) : (
+          <div className={`w-24 h-24 rounded-full bg-${planet.color} ${planet.name === "The Sun" ? 'shadow-lg shadow-yellow-500/50' : ''} relative`}>
+            {planet.name === "Saturn" && (
+              <div className="absolute inset-0 rounded-full border-4 border-yellow-500 opacity-70"></div>
+            )}
+          </div>
+        )}
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold text-white mb-2">{planet.name}</h3>
