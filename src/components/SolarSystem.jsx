@@ -1,5 +1,18 @@
+// SolarSystem.jsx
 import React from 'react';
 import PlanetCard from './PlanetCard';
+
+// Imports relativos das imagens no mesmo diretório
+import sunImg from './sun.png';
+import mercuryImg from './mercury.png';
+import venusImg from './venus.png';
+import earthImg from './earth.png';
+import marsImg from './mars.png';
+import jupiterImg from './jupiter.png';
+import saturnImg from './saturn.png';
+import uranusImg from './uranus.png';
+import neptuneImg from './neptune.png';
+import plutoImg from './pluto.png'; // se quiser incluir Plutão também
 
 const SolarSystem = () => {
   const planets = [
@@ -10,6 +23,7 @@ const SolarSystem = () => {
       diameter: "1.39M km",
       temp: "5,500°C",
       type: "G-type star",
+      image: sunImg,
       facts: [
         "Contains 99.86% of the solar system's mass",
         "Light takes 8 minutes to reach Earth",
@@ -23,6 +37,7 @@ const SolarSystem = () => {
       diameter: "4,880 km",
       distance: "57.9M km",
       temp: "-173°C to 427°C",
+      image: mercuryImg,
       facts: [
         "Smallest planet in our solar system",
         "No moons or rings",
@@ -36,6 +51,7 @@ const SolarSystem = () => {
       diameter: "12,104 km",
       distance: "108.2M km",
       temp: "462°C",
+      image: venusImg,
       facts: [
         "Hottest planet in our solar system",
         "Rotates backwards (retrograde rotation)",
@@ -49,6 +65,7 @@ const SolarSystem = () => {
       diameter: "12,742 km",
       distance: "149.6M km",
       temp: "-88°C to 58°C",
+      image: earthImg,
       facts: [
         "Only known planet with liquid water",
         "Home to millions of species",
@@ -62,6 +79,7 @@ const SolarSystem = () => {
       diameter: "6,779 km",
       distance: "227.9M km",
       temp: "-153°C to 20°C",
+      image: marsImg,
       facts: [
         "Known as the Red Planet",
         "Two moons (Phobos & Deimos)",
@@ -75,6 +93,7 @@ const SolarSystem = () => {
       diameter: "139,820 km",
       distance: "778.3M km",
       temp: "-108°C",
+      image: jupiterImg,
       facts: [
         "Largest planet in our solar system",
         "79 known moons",
@@ -88,6 +107,7 @@ const SolarSystem = () => {
       diameter: "116,460 km",
       distance: "1.4B km",
       temp: "-139°C",
+      image: saturnImg,
       facts: [
         "Famous for its ring system",
         "82 known moons",
@@ -101,6 +121,7 @@ const SolarSystem = () => {
       diameter: "50,724 km",
       distance: "2.9B km",
       temp: "-197°C",
+      image: uranusImg,
       facts: [
         "Rotates on its side (98° tilt)",
         "27 known moons",
@@ -114,10 +135,25 @@ const SolarSystem = () => {
       diameter: "49,244 km",
       distance: "4.5B km",
       temp: "-201°C",
+      image: neptuneImg,
       facts: [
         "Windiest planet (2,100 km/h winds)",
         "14 known moons",
         "Discovered through math in 1846"
+      ]
+    },
+    {
+      name: "Pluto",
+      gradient: "from-gray-600 to-gray-800",
+      color: "gray-400",
+      diameter: "2,377 km",
+      distance: "5.9B km",
+      temp: "-229°C",
+      image: plutoImg,
+      facts: [
+        "Dwarf planet",
+        "Five known moons",
+        "Demoted in 2006"
       ]
     }
   ];
