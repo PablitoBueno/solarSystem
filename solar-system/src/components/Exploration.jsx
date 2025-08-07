@@ -4,8 +4,7 @@ const Exploration = () => {
   const missions = [
     {
       name: "Apollo 11",
-      gradient: "from-gray-800 to-gray-900",
-      icon: "bg-yellow-400",
+      image: "Apollo11.jpeg",
       launch: "July 16, 1969",
       crew: "Armstrong, Aldrin, Collins",
       agency: "NASA",
@@ -13,9 +12,7 @@ const Exploration = () => {
     },
     {
       name: "Voyager Program",
-      gradient: "from-blue-800 to-blue-900",
-      icon: "bg-white",
-      iconSize: "w-16 h-16",
+      image: "VoyagerProgram.jpeg",
       launch: "1977 (Voyager 1 & 2)",
       status: "Still operational",
       agency: "NASA",
@@ -23,8 +20,7 @@ const Exploration = () => {
     },
     {
       name: "James Webb Telescope",
-      gradient: "from-purple-800 to-purple-900",
-      icon: "bg-yellow-300",
+      image: "JamesWebb.jpeg",
       launch: "December 25, 2021",
       orbit: "L2 Lagrange point",
       agency: "NASA/ESA/CSA",
@@ -32,9 +28,7 @@ const Exploration = () => {
     },
     {
       name: "International Space Station",
-      gradient: "from-gray-700 to-gray-900",
-      icon: "bg-gray-300 w-24 h-16",
-      iconIsBox: true,
+      image: "InternationalSpaceStation.jpeg",
       launch: "1998 (first module)",
       orbit: "400 km altitude",
       partners: "5 space agencies",
@@ -42,9 +36,7 @@ const Exploration = () => {
     },
     {
       name: "SpaceX",
-      gradient: "from-gray-800 to-gray-900",
-      icon: "bg-white w-24 h-16",
-      iconIsBox: true,
+      image: "SpaceX.jpeg",
       founded: "2002",
       ceo: "Elon Musk",
       achievement: "Reusable rockets",
@@ -52,9 +44,7 @@ const Exploration = () => {
     },
     {
       name: "Pioneering Astronauts",
-      gradient: "from-blue-800 to-blue-900",
-      icon: "bg-white",
-      iconSize: "w-16 h-16",
+      image: "PioneeringAstronauts.jpeg",
       gagarin: "First human in space (1961)",
       armstrong: "First Moon walk (1969)",
       tereshkova: "First woman in space (1963)",
@@ -76,17 +66,18 @@ const Exploration = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {missions.map((mission, index) => (
             <div key={index} className="bg-gray-900 bg-opacity-70 rounded-xl overflow-hidden border border-indigo-900 transition duration-300 hover:border-indigo-500">
-              <div className={`h-48 bg-gradient-to-b ${mission.gradient} flex items-center justify-center`}>
-                <div className="text-center p-4">
-                  {mission.iconIsBox ? (
-                    <div className={`${mission.icon} mx-auto mb-4`}></div>
-                  ) : (
-                    <div className={`${mission.iconSize || 'w-20 h-20'} ${mission.icon} rounded-full mx-auto mb-4`}></div>
-                  )}
-                  <h3 className="text-xl font-bold text-white">{mission.name}</h3>
-                </div>
+              {/* Área da imagem */}
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={`images/${mission.image}`} 
+                  alt={mission.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
+              
               <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-4">{mission.name}</h3>
+                
                 <div className="text-sm text-gray-400 mb-4">
                   {mission.launch && (
                     <div className="flex justify-between mb-1">
